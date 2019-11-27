@@ -7,3 +7,7 @@ Crie uma função recursiva para descobrir o menor número inteiro divisível po
 Crie uma classe contendo 3 propriedades com seus respectivos gets e sets e um método que multiplique as 3 retornando o produto. Deixe um exemplo de utilização da sua classe no final do código.
 04) Lógica de programação
 Pensando em todos os números naturais inferiores a 10 que são múltiplos de 3 ou 5, temos 3, 5, 6 e 9. Somando esses múltiplos obtemos o valor 23. Utilize um algorítimo para calcular a soma de todos os múltiplos de 3 ou 5 abaixo de 1000
+05) API
+Imagine que você ficou responsável por desenvolver o backend do sistema de uma biblioteca. Crie uma API RESTful para o cadastro, edição, listagem e exclusão dos livros (título, autor, edição) e o controle de entradas e saídas.
+06) Crawler
+Crie um crawler (aplicação de busca de informação na web) que leia as 3 primeiras notícias do site g1.globo.com e organize em um JSON contendo o título, subtitulo (se tiver) e url da imagem de destaque (se tiver).
