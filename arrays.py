@@ -3,3 +3,10 @@ Tendo os arrays ['ES', 'MG', 'RJ', 'SP'] e ['São Paulo', 'Rio de Janeiro', 'Min
 '''
 uf_sigla = ['ES', 'MG', 'RJ', 'SP']
 uf_cidade = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Espírito Santo']
+uf = {}
+
+for indice, sigla in enumerate(uf_sigla):
+    uf[sigla] = uf_cidade[(len(uf_cidade) - 1) - indice]
+
+for sigla, nome in uf.items():
+    print(f"{sigla}-{nome}")
