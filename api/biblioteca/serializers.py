@@ -34,3 +34,5 @@ class EmprestimoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Emprestimo
         fields = ['id', 'aluno', 'livro', 'data_emprestimo', 'data_devolucao', 'esta_emprestado','url']
+
+

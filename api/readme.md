@@ -4,7 +4,9 @@ A proposta foi feita em Python com [Django](https://www.djangoproject.com/) e [D
 
 Requisitos:
  - Python
+ - Postman
  
  Para garantir uma facilidade, o projeto já acompanha o `db.sqlite3` para ser executado de maneira mais simples e já possui alguns dados pré-cadastrados.
+ 
  
 
