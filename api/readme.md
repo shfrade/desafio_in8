@@ -14,7 +14,7 @@ Requisitos:
  1. `pip install -r requirements.txt`   para instalar as dependências 
  2. `python manage.py runserver` para executar o servidor na porta :8000
 
-Agora basta importar o Postman [por link](phttps://www.getpostman.com/collections/ab77ab1737fcf5ec147e) ou por arquivo que esta em `api/Biblioteca.postman_collection.json`
+Agora basta importar o Postman [por link](https://www.getpostman.com/collections/ab77ab1737fcf5ec147e) ou por arquivo que esta em `api/Biblioteca.postman_collection.json`
 
 
 O usuário super criado no banco enviado é: `Login: admin | Senha: admin`
