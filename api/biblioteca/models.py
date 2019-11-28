@@ -21,7 +21,7 @@ class Autor(models.Model):
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=200)
-    edicao = models.PositiveIntegerField(default=1)
+    edicao = models.PositiveIntegerField()
     autor = models.ManyToManyField('Autor', related_name='autores_dos_livros')
 
     def __str__(self):
@@ -31,6 +31,8 @@ class Livro(models.Model):
 class Aluno(models.Model):
     nome = models.CharField(max_length=100)
     cpf = models.CharField(max_length=15, unique=True)
+
+    # todo adicionar validaçao de cpf
 
     def __str__(self):
         return f"{self.nome}"
@@ -46,12 +48,19 @@ class Emprestimo(models.Model):
         return f"{self.livro} para o aluno(a) {self.aluno.nome} foi emprestado em {self.data_emprestimo}"
 
     @property
-    def emprestado(self):
-        if self.data_devolucao is None:
+    def foi_devolvido(self):
+        if self.data_devolucao is not None:
             return True
         return False
 
     def save(self, *args, **kwargs):
-        if self.data_devolucao < self.data_emprestimo:
-            raise Exception("A data de devolução deve ser maior ou igual a data de emprestimo.")
+        # teste de data de devolução
+        if self.data_devolucao is not None and self.data_emprestimo is not None:
+            if self.data_devolucao < self.data_emprestimo:
+                raise Exception("A data de devolução deve ser maior ou igual a data de emprestimo.")
+        # teste de emprestimo de um livro ainda não devolvido
+        emprestimos = Emprestimo.objects.filter(livro=self.livro, data_devolucao=None)
+        if len(emprestimos) > 0:
+            raise Exception(
+                f"O livro: {self.livro.titulo} já esta emprestado atualmente para: {emprestimos[0].aluno.nome}.")
         super().save(*args, **kwargs)  # Call the "real" save() method.
