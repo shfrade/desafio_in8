@@ -48,8 +48,8 @@ class Emprestimo(models.Model):
         return f"{self.livro} para o aluno(a) {self.aluno.nome} foi emprestado em {self.data_emprestimo}"
 
     @property
-    def foi_devolvido(self):
-        if self.data_devolucao is not None:
+    def esta_emprestado(self):
+        if self.data_devolucao is None:
             return True
         return False
 
@@ -60,7 +60,7 @@ class Emprestimo(models.Model):
                 raise Exception("A data de devolução deve ser maior ou igual a data de emprestimo.")
         # teste de emprestimo de um livro ainda não devolvido
         emprestimos = Emprestimo.objects.filter(livro=self.livro, data_devolucao=None)
-        if len(emprestimos) > 0:
+        if len(emprestimos) > 0 and emprestimos[0].id != self.id:
             raise Exception(
                 f"O livro: {self.livro.titulo} já esta emprestado atualmente para: {emprestimos[0].aluno.nome}.")
         super().save(*args, **kwargs)  # Call the "real" save() method.

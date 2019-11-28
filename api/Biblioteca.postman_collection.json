@@ -568,6 +568,56 @@
 					"response": []
 				},
 				{
+					"name": "Listar com filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost_url}}/biblioteca/emprestimos/?data_emprestimo=2019-11-28",
+							"host": [
+								"{{localhost_url}}"
+							],
+							"path": [
+								"biblioteca",
+								"emprestimos",
+								""
+							],
+							"query": [
+								{
+									"key": "data_emprestimo",
+									"value": "2019-11-28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar não devolvidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost_url}}/biblioteca/emprestimos/?esta_emprestado=True",
+							"host": [
+								"{{localhost_url}}"
+							],
+							"path": [
+								"biblioteca",
+								"emprestimos",
+								""
+							],
+							"query": [
+								{
+									"key": "esta_emprestado",
+									"value": "True"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Listar um registro",
 					"request": {
 						"method": "GET",
@@ -636,7 +686,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"livro\" : 3\n}",
+							"raw": "{\n\t\"livro\" : 2,\n\t\"data_devolucao\" : \"2019-10-10\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -784,7 +834,7 @@
 	],
 	"variable": [
 		{
-			"id": "34d0efef-952c-4290-8369-f77e904d797f",
+			"id": "9934aa05-3f75-44d8-a38b-c41485768e0c",
 			"key": "localhost_url",
 			"value": "http://127.0.0.1:8000",
 			"type": "string"
