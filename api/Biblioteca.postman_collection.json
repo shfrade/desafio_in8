@@ -568,7 +568,6 @@
 					"response": []
 				},
 				{
-<<<<<<< HEAD
 					"name": "Listar com filtro",
 					"request": {
 						"method": "GET",
@@ -619,8 +618,6 @@
 					"response": []
 				},
 				{
-=======
->>>>>>> 096d3461c311cce8c78f65940111a9b850194aaa
 					"name": "Listar um registro",
 					"request": {
 						"method": "GET",
@@ -689,11 +686,7 @@
 						],
 						"body": {
 							"mode": "raw",
-<<<<<<< HEAD
 							"raw": "{\n\t\"livro\" : 2,\n\t\"data_devolucao\" : \"2019-10-10\"\n}",
-=======
-							"raw": "{\n\t\"livro\" : 3\n}",
->>>>>>> 096d3461c311cce8c78f65940111a9b850194aaa
 							"options": {
 								"raw": {
 									"language": "json"
@@ -841,11 +834,7 @@
 	],
 	"variable": [
 		{
-<<<<<<< HEAD
-			"id": "9934aa05-3f75-44d8-a38b-c41485768e0c",
-=======
-			"id": "34d0efef-952c-4290-8369-f77e904d797f",
->>>>>>> 096d3461c311cce8c78f65940111a9b850194aaa
+			"id": "06e9f81a-0f6c-4587-bd85-f7f63dbf70a4",
 			"key": "localhost_url",
 			"value": "http://127.0.0.1:8000",
 			"type": "string"
